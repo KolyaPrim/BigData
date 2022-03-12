@@ -1,18 +1,18 @@
 
 def cache(times):
-    def counter(func):
-        def mind():
-            mind.count += 1
-            if mind.count == 1 or mind.count == times + 2:
-                mind.x = func()
-                mind.count = 1
+    def mind(func):
+        def memory():
+            memory.count += 1
+            if memory.count == 1 or memory.count == times + 2:
+                memory.x = func()
+                memory.count = 1
             else:
-                print(mind.x)
+                print(memory.x)
 
-        mind.x = ''
-        mind.count = 0
-        return mind
-    return counter
+        memory.x = ''
+        memory.count = 0
+        return memory
+    return mind
 
 @cache(times=3)
 def f():
