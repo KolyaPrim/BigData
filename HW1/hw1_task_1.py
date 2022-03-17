@@ -14,7 +14,7 @@ def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) ->
                 for l in d:
                     sum_abcd = i + j + k + l  # A[i] + B[j] + C[k] + D[l]
                     if sum_abcd == 0:
-                        print("A: %i\tB: %i\tC: %i\tD: %i" % (i, j, k, l))
+                        #  print("A: %i\tB: %i\tC: %i\tD: %i" % (i, j, k, l))
                         z += 1
 
     return z
