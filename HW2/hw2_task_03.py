@@ -20,24 +20,15 @@ from typing import Any
 def custom_range(mas: str, *args: Any):
     if len(args) == 1:
         index = mas.index(args[0])
-        if index == -1:
-            return mas
-        else:
-            return mas[:index]
+        return mas[:index]
     elif len(args) == 2:
         start_index = mas.index(args[0])
         end_index = mas.index(args[1])
-        if start_index == -1 or end_index == -1:
-            return mas
-        else:
-            return mas[start_index:end_index]
+        return mas[start_index:end_index]
     elif len(args) > 2:
         start_index = mas.index(args[0])
         end_index = mas.index(args[1])
-        if start_index == -1 or end_index == -1 or type(args[2]) == isinstance(args[2], int):
-            return mas
-        else:
-            return mas[start_index:end_index:args[2]]
+        return mas[start_index:end_index:args[2]]
     else:
         return mas
 
