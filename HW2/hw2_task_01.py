@@ -14,7 +14,6 @@ assert combinations([1, 2], [3, 4]) == [
     [2, 4],
 ]
 """
-from itertools import permutations
 from typing import List, Any
 import itertools
 
