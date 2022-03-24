@@ -1,23 +1,51 @@
-"""
-Armstrong number is a number that is the sum of its own digits each raised to the power of the number of digits.
-https://en.wikipedia.org/wiki/Narcissistic_number
+# I decided to write a code that generates data filtering object from a list of keyword parameters:
 
-Examples:
+class Filter:
+    """
+        Helper filter class. Accepts a list of single-argument
+        functions that return True if object in list conforms to some criteria
+    """
+    def __init__(self, functions):
+        self.functions = functions
 
-- 9 is an Armstrong number, 9 = 9^1 = 9
-- 10 is not: 10 != 1^2 + 0^2 = 1
-- 153 is : 153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+    def apply(self, data):
+        return [
+            item for item in data 
+            if all(i(item) for i in self.functions)
+        ]
+
+# example of usage:
+# positive_even = Filter(lamba a: a % 2 == 0, lambda a: a > 0, lambda a: isinstance(int, a)))
+# positive_even.apply(range(100)) should return only even numbers from 0 to 99
 
 
-Write a function that detects if a number is Armstrong number in functionaly style:
- - use map or other utilities from functools library,
- - use anonymous functions (or use function as argument)
- - do not use loops, preferably using list comprehensions
+def make_filter(**keywords):
+    """
+        Generate filter object for specified keywords
+    """
+    filter_funcs = []
+    for key, value in keywords.items():
+        def keyword_filter_func(value):
+            return value[key] == value
+        filter_funcs.append(keyword_filter_func)
+    return Filter(filter_funcs)
 
-### Example function signature and call
-"""
-def is_armstrong(number: int) -> bool:
-    ...
-  
-assert is_armstrong(153) == True, 'Is Armstrong number'
-assert is_armstrong(10) == False, 'Is not Armstrong number'
+
+sample_data  =  [
+     {
+         "name": "Bill",
+         "last_name": "Gilbert",
+         "occupation": "was here",
+         "type": "person",
+     },
+     {
+         "is_dead": True,
+         "kind": "parrot",
+         "type": "bird",
+         "name": "polly"
+     }
+]
+
+# make_filter(name='polly', type='bird').apply(sample_data) should return only second entry from the list
+
+# There are multiple bugs in this code. Find them all and write tests for faulty cases.
