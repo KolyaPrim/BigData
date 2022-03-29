@@ -25,17 +25,3 @@ You will learn:
 **** https://docs.python.org/3/tutorial/errors.html#raising-exceptions
 """
 
-
-def read_magic_number(path) -> bool:
-    with open(path) as file:
-        try:
-            linenumber = float(file.readline())
-            if linenumber >= 1.0 & linenumber < 3.0:
-                return True
-            else:
-                return False
-        except ValueError:
-            return ValueError
-
-
-
