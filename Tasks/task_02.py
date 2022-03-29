@@ -26,5 +26,16 @@ You will learn:
 """
 
 
-def read_magic_number(path: str) -> bool:
-    ...
+def read_magic_number(path) -> bool:
+    with open(path) as file:
+        try:
+            linenumber = float(file.readline())
+            if linenumber >= 1.0 & linenumber < 3.0:
+                return True
+            else:
+                return False
+        except ValueError:
+            return ValueError
+
+
+
