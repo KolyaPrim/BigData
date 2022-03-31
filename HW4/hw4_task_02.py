@@ -11,7 +11,7 @@ def read_magic_number(path: str) -> bool:
     >>> read_magic_number("src/file_false.txt")
     False
     >>> read_magic_number("src/file_error.txt")
-    'ValueError'
+    <class 'ValueError'>
     """
     with open(path) as file:
         result = True
@@ -23,7 +23,7 @@ def read_magic_number(path: str) -> bool:
                 else:
                     return False
         except ValueError:
-            return ValueError.__name__
+            return ValueError
 
         return result
 

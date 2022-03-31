@@ -23,7 +23,3 @@ You will learn:
 
 
 """
-
-
-def my_precious_logger(text: str):
-    pass
