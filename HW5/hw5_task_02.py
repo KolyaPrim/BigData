@@ -1,5 +1,5 @@
 import functools
-from collections.abc import Callable
+
 
 def saving_info(original_func):
     def decorator(func):
