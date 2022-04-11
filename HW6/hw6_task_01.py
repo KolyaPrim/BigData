@@ -1,6 +1,6 @@
 def instances_counter(cls):
 
-    class Counter():
+    class Counter:
         counter = 0
 
         def __init__(self, ):
