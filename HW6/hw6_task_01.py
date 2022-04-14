@@ -1,9 +1,8 @@
 def instances_counter(cls):
-
     class Counter:
         counter = 0
 
-        def __init__(self, ):
+        def __init__(self):
             Counter.counter += 1
 
         @classmethod
@@ -15,7 +14,8 @@ def instances_counter(cls):
             Counter.counter = 0
             print("Counter is 0")
 
-    return Counter
+    return
+
 
 @instances_counter
 class User:

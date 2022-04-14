@@ -52,38 +52,6 @@ PEP8 соблюдать строго.
 import datetime
 from collections import defaultdict
 
-class Homework:
-
-    def __init__(self, text: str, deadline: datetime.timedelta = datetime.timedelta(days=1)):
-        self.text = text
-        self.deadline = deadline
-        self.created = datetime.datetime.today()
-
-    def deadline_check(self) -> bool:
-        return (datetime.datetime.today() - self.created).days < self.deadline
-
-
-class Student:
-    def __init__(self, first_name: str, last_name: str):
-        self.first_name = first_name
-        self.last_name = last_name
-
-    def do_homework(self, Homework):
-        if not Homework.deadline_check():
-            print("You are late")
-            return None
-        return Homework
-
-
-class Teacher:
-    def __init__(self, first_name: str, last_name: str):
-        self.first_name = first_name
-        self.last_name = last_name
-
-    def create_homework(self, text: str, deadline: datetime.timedelta.days = datetime.timedelta(days=1)):
-        hw = Homework(f"{text}", deadline)
-        return hw
-
 if __name__ == '__main__':
     opp_teacher = Teacher('Daniil', 'Shadrin')
     advanced_python_teacher = Teacher('Aleksandr', 'Smetanin')
