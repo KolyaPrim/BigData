@@ -1,8 +1,9 @@
 def instances_counter(cls):
-    class Counter:
+    class Counter(cls):
         counter = 0
 
         def __init__(self):
+            super().__init__()
             Counter.counter += 1
 
         @classmethod
@@ -14,13 +15,12 @@ def instances_counter(cls):
             Counter.counter = 0
             print("Counter is 0")
 
-    return
+    return Counter
 
 
 @instances_counter
 class User:
     pass
-
 
 if __name__ == '__main__':
     User.get_created_instances()  # 0
