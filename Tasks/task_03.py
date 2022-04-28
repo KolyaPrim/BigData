@@ -12,7 +12,7 @@ Example:
      [x, o, x]]
     Return value should be "unfinished"
 
-    [[-, -, o],
+    [[-, -, -],
      [-, o, o],
      [x, x, x]]
 
