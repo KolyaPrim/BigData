@@ -1,4 +1,13 @@
 class KeyValueStorage():
+    """
+    >>> storage = KeyValueStorage('src/task_04.txt')
+    >>> print(storage['name'])  # will be string 'kek'
+    kek
+    >>> print(storage.song)  # will be 'shadilay'
+    shadilay
+    >>> print(storage.power)  # will be integer 9001
+    9001
+    """
     my_dict = {}
 
     def __init__(self, path):
@@ -20,7 +29,11 @@ class KeyValueStorage():
         return self.my_dict[key]
 
 
-storage = KeyValueStorage('src/task_04.txt')
-print(storage['name'])  # will be string 'kek'
-print(storage.song)  # will be 'shadilay'
-print(storage.power)  # will be integer 9001
+# storage = KeyValueStorage('src/task_04.txt')
+# print(storage['name'])  # will be string 'kek'
+# print(storage.song)  # will be 'shadilay'
+# print(storage.power)  # will be integer 9001
+if __name__ == '__main__':
+    import doctest
+
+    print(doctest.testmod())

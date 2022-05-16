@@ -18,3 +18,4 @@ def universal_file_counter(
     dir_path: Path, file_extension: str, tokenizer: Optional[Callable] = None
 ) -> int:
     pass
+
